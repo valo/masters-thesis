@@ -1,0 +1,11 @@
+graph arch {
+    MySQL[label="MySQL база\nСъхранява\nвсички данни", shape=box];
+    Web[label="Web Сайт", shape=box];
+    Grader[label="Grader", shape=box];
+    
+    MySQL -- Web[label="CRUD users\nproblems\ncontests"];
+    MySQL -- Grader[label="RW solution\nstatus"];
+    Grader -- Web[label="rsync"];
+    
+    {rank=same; MySQL; Web}
+}
